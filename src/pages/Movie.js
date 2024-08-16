@@ -12,10 +12,11 @@ function Movie() {
     fetch(`http://localhost:4000/movies/${id}`)
     .then(response => response.json())
     .then(movieData => {
-      setMovieList(movieData)
-      console.log(movieList)
-      const movieGenres = movieList.genres
-      console.log(movieGenres)
+      setMovieList({...movieData})
+      console.log("Returned movie data: ", movieData)
+      console.log("Current movie card: ", movieList)
+      const movieGenres = movieData.genres
+      console.log("movie genres: ", movieGenres)
       if(movieGenres){
       const movieGenreList = movieGenres.map((genre, index) =>{
         return <span key={index}>{genre}</span>
