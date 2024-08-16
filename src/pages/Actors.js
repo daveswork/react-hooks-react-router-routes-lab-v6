@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import NavBar from "../components/NavBar";
-import { act } from "react";
+import { useEffect, useState } from "react"
+import NavBar from "../components/NavBar"
+import { act } from "react"
 
 
 

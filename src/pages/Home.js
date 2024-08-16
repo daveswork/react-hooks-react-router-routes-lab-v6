@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import NavBar from "../components/NavBar";
-import MovieCard from "../components/MovieCard";
+import { useEffect, useState } from "react"
+import NavBar from "../components/NavBar"
+import MovieCard from "../components/MovieCard"
 
 function Home() {
 
