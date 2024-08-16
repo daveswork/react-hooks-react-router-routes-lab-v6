@@ -4,7 +4,16 @@ import { useParams } from "react-router-dom"
 
 
 function Movie() {
-  const [movieList, setMovieList] = useState({})
+  const [movieList, setMovieList] = useState(
+    {
+      "id": "",
+      "title": "",
+      "time": 0,
+      "genres": [
+
+      ]
+    }
+  )
   const [movieGenres, setMovieGenres] = useState([])
   const {id} = useParams()
 
@@ -12,7 +21,7 @@ function Movie() {
     fetch(`http://localhost:4000/movies/${id}`)
     .then(response => response.json())
     .then(movieData => {
-      setMovieList({...movieData})
+      setMovieList({...movieList, ...movieData})
       console.log("Returned movie data: ", movieData)
       console.log("Current movie card: ", movieList)
       const movieGenres = movieData.genres
